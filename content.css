@@ -1,0 +1,95 @@
+#tver-speed-panel {
+  position: fixed;
+  right: 12px;
+  bottom: 12px;
+  z-index: 2147483647;
+  background: rgba(20, 20, 20, 0.85);
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1.4;
+  border-radius: 8px;
+  padding: 6px 8px;
+  max-width: 260px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#tver-speed-panel * {
+  box-sizing: border-box;
+}
+
+#tver-speed-panel .tver-speed-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+#tver-speed-panel.collapsed .tver-speed-header {
+  margin-bottom: 0;
+}
+
+#tver-speed-panel .tver-speed-title {
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+#tver-speed-panel .tver-speed-collapse {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  padding: 0;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+#tver-speed-panel .tver-speed-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+
+#tver-speed-panel .tver-speed-btn {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 6px;
+  font-size: 11px;
+  cursor: pointer;
+  min-width: 32px;
+}
+
+#tver-speed-panel .tver-speed-btn.active {
+  background: #ff5252;
+  font-weight: 600;
+}
+
+#tver-speed-panel .tver-speed-status {
+  opacity: 0.85;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+/* 狭い画面では折り返し・横スクロールで横幅を超えないようにする */
+@media (max-width: 420px) {
+  #tver-speed-panel {
+    right: 6px;
+    bottom: 6px;
+    max-width: calc(100vw - 12px);
+  }
+
+  #tver-speed-panel .tver-speed-buttons {
+    max-width: 100%;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+}

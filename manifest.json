@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "TVer 再生速度変更",
+  "short_name": "TVer速度変更",
+  "version": "0.1.0",
+  "description": "TVer(tver.jp)の動画再生速度を手動・自動で変更する個人利用向け試作アドオンです。",
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["*://tver.jp/*", "*://*.tver.jp/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "TVer 再生速度変更",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
