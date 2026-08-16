@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>TVer 再生速度変更</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <main id="app">
+    <h1>TVer 再生速度変更</h1>
+
+    <div id="unsupported" class="hidden">
+      この環境では拡張機能の設定保存(chrome.storage)が利用できないため、
+      設定は保存されません。初期速度1.0倍で動作します。
+    </div>
+
+    <section class="row">
+      <span class="label">アドオン</span>
+      <label class="switch">
+        <input type="checkbox" id="enabled" />
+        <span>有効にする</span>
+      </label>
+    </section>
+
+    <section>
+      <div class="label">再生速度</div>
+      <div id="speedButtons" class="speed-buttons"></div>
+    </section>
+
+    <section class="row">
+      <span class="label">現在の速度</span>
+      <span id="currentSpeed">1.0x</span>
+    </section>
+
+    <section class="row">
+      <span class="label">動画開始時に自動適用</span>
+      <label class="switch">
+        <input type="checkbox" id="autoApply" />
+        <span>ON</span>
+      </label>
+    </section>
+
+    <p class="note">TVer(tver.jp)専用の試作アドオンです。</p>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>
