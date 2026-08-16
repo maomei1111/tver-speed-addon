@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "TVer再生速度変更",
+  "short_name": "TVer速度変更",
+  "version": "0.1.0",
+  "description": "Firefox AndroidのTVer Web版で再生速度を変更します。",
+  "permissions": ["storage"],
+  "host_permissions": ["https://tver.jp/*", "https://*.tver.jp/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://tver.jp/*", "https://*.tver.jp/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "TVer再生速度",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "tver-speed@example.local",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    },
+    "gecko_android": {
+      "strict_min_version": "142.0"
+    }
+  }
+}
