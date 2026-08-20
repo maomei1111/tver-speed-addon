@@ -3,7 +3,7 @@
 
   var browserApi = globalThis.browser ?? globalThis.chrome;
 
-  var SPEEDS = [0.5, 1, 1.25, 1.5, 2, 3, 4];
+  var SPEEDS = [1.25, 1.5, 2, 2.5, 3, 3.5, 4];
   var DEFAULT_SETTINGS = { speed: 1.0, autoApply: true, enabled: true };
   var PANEL_ID = "tver-speed-addon-panel";
   var REAPPLY_EVENTS = ["loadedmetadata", "play", "playing", "ratechange"];
